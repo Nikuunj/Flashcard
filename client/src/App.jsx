@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import FlashcardList from './pages/FlashcardList';
 import Dashboard from './pages/Dashboard';
 import Header from './component/Header';
@@ -12,6 +13,7 @@ const App = () => {
       <Header/>
       <Outlet />
       <Footer/>
+      <Analytics />
     </div>
   );
 
