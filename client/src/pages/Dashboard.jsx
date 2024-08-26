@@ -24,6 +24,18 @@ const Dashboard = () => {
   }, []);
 
   const addFlashcard = () => {
+    if(question === '' && answer === '') {
+      alert('Plz write the question and answer')
+      return;
+    }
+    if(question === '') {
+      alert('Plz write quetion')
+      return;
+    }
+    if(answer === '') {
+      alert('Plz write answer')
+      return;
+    }
     if (editingId) {
       axios.put(`https://flashcard-nnz8.onrender.com/api/flashcards/${editingId}`, { question, answer })
         .then(() => {
@@ -81,7 +93,7 @@ const Dashboard = () => {
         />
         <button
           onClick={addFlashcard}
-          className="bg-blue-500 text-white p-2 rounded"
+          className="bg-green-500 hover:bg-green-600 hover:text-zinc-200 text-white p-2 rounded"
         >
           {editingId ? 'Update' : 'Add'}
         </button>
@@ -106,13 +118,13 @@ const Dashboard = () => {
               <div className="flex justify-between">
                 <button
                   onClick={() => editFlashcard(fc.id)}
-                  className="bg-yellow-500 text-white p-1 rounded"
+                  className="bg-yellow-500 text-white p-1 rounded hover:bg-yellow-600 hover:text-zinc-200"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => deleteFlashcard(fc.id)}
-                  className="bg-red-500 text-white p-1 rounded"
+                  className="bg-red-500 text-white p-1 rounded hover:bg-red-600 hover:text-zinc-200"
                 >
                   Delete
                 </button>

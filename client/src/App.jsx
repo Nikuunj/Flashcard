@@ -9,7 +9,7 @@ import Footer from './component/Footer';
 const App = () => {
 
   const Layout = () => (
-    <div className=''>     
+    <div className='overflow-hidden'>     
       <Header/>
       <Outlet />
       <Footer/>

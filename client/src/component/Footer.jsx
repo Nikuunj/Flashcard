@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaGlobe } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-4">
+    <footer className="bg-gray-800 text-white py-4 mt-[5px]">
       <div className="container mx-auto flex justify-center space-x-6">
         <a href="https://github.com/Nikuunj" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
           <FaGithub size={24} />
